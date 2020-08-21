@@ -32,10 +32,15 @@ public class MainMenu : MonoBehaviour
     // Loads the maze scene when the Play button is pressed
     public void PlayMaze()
     {
-        if(colorblindMode.isOn)
+        if (colorblindMode.isOn)
         {
             trapMat.color = new Color32(255, 112, 0, 1);
             goalMat.color = Color.blue;
+        }
+        else
+        {
+            trapMat.color = new Color32(0, 255, 0, 1);
+            goalMat.color = new Color32(255, 0, 0, 1);
         }
         SceneManager.LoadScene("maze");
     }
