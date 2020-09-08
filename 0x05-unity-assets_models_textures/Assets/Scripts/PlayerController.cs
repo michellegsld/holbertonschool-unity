@@ -49,11 +49,8 @@ public class PlayerController : MonoBehaviour
     // Called when the player collides with an object
     void OnCollisionEnter(Collision collision)
     {
-        // If the player is on a Platform
-        if (collision.gameObject.transform.parent.name == "Platforms")
-        {
+        if (collision.gameObject.tag == "Platform")
             onPlatform = true;
-        }
     }
 
     // Called when the player is not touching another object anymore
