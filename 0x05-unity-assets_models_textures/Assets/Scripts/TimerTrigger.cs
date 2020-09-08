@@ -15,10 +15,12 @@ public class TimerTrigger : MonoBehaviour
        timerScript = player.GetComponent<Timer>();
     }
 
+    // When player first moves
     void OnTriggerExit(Collider collider)
     {
         timerScript.enabled = true;
         //This was when this function was OnColliderExit instead of trigger
-        //gameObject.SetActive(false);    // When player reset, would land on top of this
+        // Re-enabled as when hit flag then fall, if move then continues timer
+        gameObject.SetActive(false);    // When player reset, would land on top of this
     }
 }
