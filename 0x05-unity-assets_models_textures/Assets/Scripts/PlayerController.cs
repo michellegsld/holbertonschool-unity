@@ -8,11 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]    // In order to see it in the inspector
     private Rigidbody player;
 
-    private Vector3 inputVector;
-
     private bool onPlatform = true;
-    public float speed = 15f;
-    public float jump = 100;
+    public float speed = 10f;
+    public float jump = 120f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,17 +21,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputVector = new Vector3(Input.GetAxis("Horizontal") * speed, 0, Input.GetAxis("Vertical") * speed); // Keys inputed
-        //transform.LookAt(transform.position + new Vector3(inputVector.x, 0, inputVector.z)); <-make character look in direction it moving in
+        //inputVector = new Vector3(Input.GetAxis("Horizontal") * speed, 0, Input.GetAxis("Vertical") * speed); //(OLD) Keys inputed
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 playerMove = new Vector3(x, 0f, z).normalized * speed * Time.deltaTime;
+        player.transform.Translate(playerMove, Space.Self);
+
+        if (player.transform.position.y <= -5)
+        {
+            player.transform.position = new Vector3(0, 5, 0);
+        }
     }
 
     // Called according to the framerate
     private void FixedUpdate()
     {
-        player.velocity = inputVector; // Move player according to keys inputed before
+        //player.velocity = inputVector; //(OLD) Move player according to keys inputed before
         if (Input.GetKey(KeyCode.Space) && onPlatform == true)
         {
-            player.AddForce(new Vector3(0, jump, 0), ForceMode.VelocityChange);
+            //player.AddForce(new Vector3(0, jump, 0), ForceMode.Impulse);
+            player.AddForce(Vector3.up * jump);
         }
     }
 
