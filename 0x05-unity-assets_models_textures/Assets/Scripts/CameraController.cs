@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     // How fast the mouse turns
-    public float turnSpeed = 6;
+    public float turnSpeed = 1;
 
     private Transform target, player;
     float mouseX, mouseY;
@@ -33,7 +33,6 @@ public class CameraController : MonoBehaviour
         mouseY = Mathf.Clamp(mouseY, -10, 60);
 
         // rotate the camera
-        transform.LookAt(target);
         target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         player.rotation = Quaternion.Euler(0, mouseX, 0);
     }
