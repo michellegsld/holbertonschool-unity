@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
         Vector3 playerMove = new Vector3(x, 0f, z).normalized * speed * Time.deltaTime;
         player.transform.Translate(playerMove, Space.Self);
 
-        if (player.transform.position.y <= -5)
+        if (player.transform.position.y <= -10)
         {
-            player.transform.position = new Vector3(0, 5, 0);
+            player.transform.position = new Vector3(0, 10, 0);
         }
     }
 
