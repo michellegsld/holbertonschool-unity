@@ -4,6 +4,7 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -67,5 +68,27 @@ public class PauseMenu : MonoBehaviour
         // To set mouse pointer to game settings
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    // Start the current level over again
+    public void Restart()
+    {
+        // Gets current scene
+        Scene level = SceneManager.GetActiveScene();
+
+        // Re-loads the current scene by getting its name
+        SceneManager.LoadScene(level.name);
+    }
+
+    // Opens main menu
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    // Opens options menu
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
     }
 }
