@@ -11,6 +11,9 @@ public class CameraController : MonoBehaviour
     private Transform target, player;
     float mouseX, mouseY;
 
+    // To invert the Y axis
+    public bool isInverted;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,14 @@ public class CameraController : MonoBehaviour
     {
         // Assign the mouse inputs
         mouseX += Input.GetAxis("Mouse X") * turnSpeed;
-        mouseY -= Input.GetAxis("Mouse Y") * turnSpeed;
+        if (isInverted)
+        {
+            mouseY += Input.GetAxis("Mouse Y") * turnSpeed;
+        }
+        else
+        {
+            mouseY -= Input.GetAxis("Mouse Y") * turnSpeed;
+        }
 
         // Clamp the vertical rotation, so mouse doesn't flip around
         // Middle value is like how low it can go
