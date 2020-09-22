@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player = GetComponent<Rigidbody>();
+
+        // To use the back button in the options menu
+        PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
     }
 
     // Update is called once per frame
