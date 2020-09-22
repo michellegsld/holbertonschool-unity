@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Text TimerText;
-    public Stopwatch timer;
+    public static Stopwatch timer;
 
     // Start is called before the first frame update
     void Start()

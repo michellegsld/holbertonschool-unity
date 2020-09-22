@@ -19674,6 +19674,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b65de07e7e0332469fd446e928febb1, type: 3}
+--- !u!1 &906650609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3574246507945008670, guid: 33dd4587dae8b934cb36488e696f0e12,
+    type: 3}
+  m_PrefabInstance: {fileID: 3574246508716129775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &912794704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36817,6 +36823,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d0cccbd7c2140a45bfc4752d856a529, type: 3}
+--- !u!1 &1690403318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3574246509316013081, guid: 33dd4587dae8b934cb36488e696f0e12,
+    type: 3}
+  m_PrefabInstance: {fileID: 3574246508716129775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1690403319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690403318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663d77c0402b4a84eb181e61b03b3b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 906650609}
+  timerScript: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1001 &1700233416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46766,6 +46793,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3574246509316013079, guid: 33dd4587dae8b934cb36488e696f0e12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574246509316013079, guid: 33dd4587dae8b934cb36488e696f0e12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574246509316013079, guid: 33dd4587dae8b934cb36488e696f0e12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574246509316013079, guid: 33dd4587dae8b934cb36488e696f0e12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574246509316013079, guid: 33dd4587dae8b934cb36488e696f0e12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574246509316013079, guid: 33dd4587dae8b934cb36488e696f0e12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33dd4587dae8b934cb36488e696f0e12, type: 3}
 --- !u!1001 &4457522475464187351
@@ -46873,6 +46930,21 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 10
   jump: 120
+--- !u!114 &4457522475464187354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457522475464187352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663d77c0402b4a84eb181e61b03b3b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 906650609}
+  timerScript: {fileID: 0}
+  player: {fileID: 4457522475464187352}
 --- !u!4 &4457522475464187357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4457522475718363607, guid: 93291240918814b408a15aabfffcf57e,
