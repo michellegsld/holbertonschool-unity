@@ -22,6 +22,8 @@ public class CameraController : MonoBehaviour
 
         Cursor.visible = false; // To not see mouse cursor
         Cursor.lockState = CursorLockMode.Locked;   // For mouse cursor to stay in center of screen
+
+        isInverted = (PlayerPrefs.GetInt("isInverted", 0) == 1) ? true : false;
     }
 
     // Update is called once per frame

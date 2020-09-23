@@ -42,8 +42,11 @@ public class PauseMenu : MonoBehaviour
         // Boolean in case user presses ESC again
         currentlyPaused = true;
 
-        // Pause the timer
-        timer.Stop();
+        if (timer != null)
+        {
+            // Pause the timer
+            timer.Stop();
+        }
 
         // Display pause menu
         pauseCanvas.gameObject.SetActive(true);
@@ -59,8 +62,11 @@ public class PauseMenu : MonoBehaviour
         // Boolean in case user presses ESC again
         currentlyPaused = false;
 
-        // Resumes the timer
-        timer.Start();
+        if (timer != null)
+        {
+            // Resumes the timer
+            timer.Start();
+        }
 
         // Hides the pause menu
         pauseCanvas.gameObject.SetActive(false);
