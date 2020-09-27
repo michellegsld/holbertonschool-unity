@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Text TimerText;
+    public Text FinalTime;
     public static Stopwatch timer;
 
     // Start is called before the first frame update
@@ -24,5 +25,14 @@ public class Timer : MonoBehaviour
     {
         TimeSpan ts = timer.Elapsed;
         TimerText.text = string.Format("{0:00}:{1:00}.{2:00}", ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
+    }
+
+    // Displays the player's win time in WinCanvas under FinalTime
+    // (FinalTime is the text game object under WinCanvas)
+    public void Win()
+    {
+        timer.Stop();
+        TimeSpan ts = timer.Elapsed;
+        FinalTime.text = string.Format("{0:00}:{1:00}.{2:00}", ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
     }
 }

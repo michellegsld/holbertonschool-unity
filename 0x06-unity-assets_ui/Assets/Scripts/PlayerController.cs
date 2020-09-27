@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
 
     private bool onPlatform = true;
     public float speed = 10f;
-    public float jump = 120f;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +44,10 @@ public class PlayerController : MonoBehaviour
         //player.velocity = inputVector; //(OLD) Move player according to keys inputed before
         if (Input.GetKey(KeyCode.Space) && onPlatform == true)
         {
-            //player.AddForce(new Vector3(0, jump, 0), ForceMode.Impulse);
-            player.AddForce(Vector3.up * jump);
+            // (OLD) player.AddForce(Vector3.up * jump);
+            Vector3 movement = new Vector3(0, 0.0F, 0) * speed * Time.deltaTime;
+            movement.y = 5.5f;
+            player.velocity = movement;
         }
     }
 

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Class for pausing the game
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
@@ -42,6 +43,12 @@ public class PauseMenu : MonoBehaviour
         // Boolean in case user presses ESC again
         currentlyPaused = true;
 
+        // Sets Time Scale to 0 to "freeze" any movement
+        Time.timeScale = 0;
+
+        // Sets camera turn speed to 0 to prevent looking around
+        CameraController.turnSpeed = 0;
+
         if (timer != null)
         {
             // Pause the timer
@@ -61,6 +68,12 @@ public class PauseMenu : MonoBehaviour
     {
         // Boolean in case user presses ESC again
         currentlyPaused = false;
+
+        // Activates Time Scale to normal value
+        Time.timeScale = 1;
+
+        // Sets camera turn speed to 1 to resume looking around
+        CameraController.turnSpeed = 1;
 
         if (timer != null)
         {

@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     // How fast the mouse turns
-    public float turnSpeed = 1;
+    public static float turnSpeed = 1;
 
     private Transform target, player;
     float mouseX, mouseY;
