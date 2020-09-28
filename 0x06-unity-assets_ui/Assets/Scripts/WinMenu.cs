@@ -14,12 +14,6 @@ public class WinMenu : MonoBehaviour
         Cursor.visible = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Opens main menu
     public void MainMenu()
     {

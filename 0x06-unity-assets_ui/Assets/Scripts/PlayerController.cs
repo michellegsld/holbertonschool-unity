@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private bool onPlatform = true;
     public float speed = 10f;
 
+    public GameObject pauseCanvas;
+    public GameObject winCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,12 @@ public class PlayerController : MonoBehaviour
 
         // To use the back button in the options menu
         PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
+
+        // Activates Time Scale to normal value
+        Time.timeScale = 1;
+
+        // Sets camera turn speed to 1 to resume looking around
+        CameraController.turnSpeed = 1;
     }
 
     // Update is called once per frame
@@ -26,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         //inputVector = new Vector3(Input.GetAxis("Horizontal") * speed, 0, Input.GetAxis("Vertical") * speed); //(OLD) Keys inputed
 
+        // Controls player movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -35,6 +45,12 @@ public class PlayerController : MonoBehaviour
         if (player.transform.position.y <= -10)
         {
             player.transform.position = new Vector3(0, 10, 0);
+        }
+
+        // Opens pause menu
+        if (Input.GetKeyDown("escape") && winCanvas.gameObject.active == false)
+        {
+            pauseCanvas.GetComponent<PauseMenu>().Pause();
         }
     }
 

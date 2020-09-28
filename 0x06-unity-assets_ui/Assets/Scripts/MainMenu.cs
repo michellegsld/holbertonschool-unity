@@ -25,4 +25,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
+
+    // To Exit the game
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

@@ -29383,6 +29383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   speed: 10
+  pauseCanvas: {fileID: 2134057925}
+  winCanvas: {fileID: 135243220}
 --- !u!135 &1310498047
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29412,19 +29414,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1310498049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310498043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 663d77c0402b4a84eb181e61b03b3b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseCanvas: {fileID: 2134057925}
 --- !u!1001 &1316063072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46836,6 +46825,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 336730716}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2134057926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134057925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663d77c0402b4a84eb181e61b03b3b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 2134057925}
 --- !u!1001 &2137862059
 PrefabInstance:
   m_ObjectHideFlags: 0

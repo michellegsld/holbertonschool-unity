@@ -10,49 +10,31 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
-    private bool currentlyPaused = false;
-
     private static Stopwatch timer;
-
-    // Start is called before the first frame update
-    void Start()
-    {   }
 
     // Update is called once per frame
     void Update()
     {
-        // Setting `timer` to `timer` in the Timer script
-        timer = Timer.timer;
-
+        // If user presses ESC while pause menu is open
         if (Input.GetKeyDown("escape"))
         {
-            if (currentlyPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Resume();
         }
     }
 
     // Pauses the game
     public void Pause()
     {
-        // Boolean in case user presses ESC again
-        currentlyPaused = true;
-
         // Sets Time Scale to 0 to "freeze" any movement
         Time.timeScale = 0;
 
         // Sets camera turn speed to 0 to prevent looking around
         CameraController.turnSpeed = 0;
 
-        if (timer != null)
+        if (Timer.timer != null)
         {
             // Pause the timer
-            timer.Stop();
+            Timer.timer.Stop();
         }
 
         // Display pause menu
@@ -66,19 +48,16 @@ public class PauseMenu : MonoBehaviour
     // Continues the game
     public void Resume()
     {
-        // Boolean in case user presses ESC again
-        currentlyPaused = false;
-
         // Activates Time Scale to normal value
         Time.timeScale = 1;
 
         // Sets camera turn speed to 1 to resume looking around
         CameraController.turnSpeed = 1;
 
-        if (timer != null)
+        if (Timer.timer != null)
         {
             // Resumes the timer
-            timer.Start();
+            Timer.timer.Start();
         }
 
         // Hides the pause menu

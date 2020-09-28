@@ -27,7 +27,6 @@ public class OptionsMenu : MonoBehaviour
     // To apply changes and load previous scene
     public void Apply()
     {
-
         if (invertToggle.isOn == true)
         {
             PlayerPrefs.SetInt("isInverted", 1);
