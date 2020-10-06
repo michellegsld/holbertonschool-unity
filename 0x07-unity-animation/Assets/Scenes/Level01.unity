@@ -46895,6 +46895,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4203816056185305472, guid: 93291240918814b408a15aabfffcf57e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4457522475464187353, guid: 93291240918814b408a15aabfffcf57e,
         type: 3}
       propertyPath: pauseCanvas
