@@ -15,7 +15,7 @@ public class CutsceneController : MonoBehaviour
     void Start()
     {
         // Sets mainCamera to the first child of the first child of player
-        mainCamera = player.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+        mainCamera = player.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject;
     }
 
     // Function called by animation event (end of Intro01)
