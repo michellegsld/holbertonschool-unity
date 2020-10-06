@@ -14640,6 +14640,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4841443042563366368, guid: fa749450ecc0e0949ad3b361e7dac723,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4841443042654753203, guid: fa749450ecc0e0949ad3b361e7dac723,
         type: 3}
       propertyPath: m_FontData.m_Font
@@ -16362,6 +16367,7 @@ GameObject:
   - component: {fileID: 707699411}
   - component: {fileID: 707699410}
   - component: {fileID: 707699414}
+  - component: {fileID: 707699415}
   m_Layer: 0
   m_Name: CutsceneCamera
   m_TagString: Untagged
@@ -16462,6 +16468,21 @@ Skybox:
   m_GameObject: {fileID: 707699409}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 617d9be015db68348a623b01ea51a8c5, type: 2}
+--- !u!114 &707699415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707699409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873e7688dd45ffd47bb2cdd99b8082ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneCamera: {fileID: 707699409}
+  player: {fileID: 4457522475464187352}
+  timerCanvas: {fileID: 1766355619}
 --- !u!1001 &711190116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34364,7 +34385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1591138358
 AudioListener:
   m_ObjectHideFlags: 0
@@ -47101,7 +47122,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4457522475464187352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 464ec0ce7f01afb468f646de1b09bcaa, type: 3}
   m_Name: 

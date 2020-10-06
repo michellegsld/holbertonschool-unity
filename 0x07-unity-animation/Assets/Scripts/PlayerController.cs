@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Opens pause menu
-        if (Input.GetKeyDown("escape") && winCanvas.gameObject.active == false)
+        if (Input.GetKeyDown("escape") && winCanvas.gameObject.activeSelf == false)
         {
             pauseCanvas.GetComponent<PauseMenu>().Pause();
         }
