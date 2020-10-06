@@ -46895,6 +46895,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3319932707157736443, guid: 93291240918814b408a15aabfffcf57e,
+        type: 3}
+      propertyPath: m_CustomSkybox
+      value: 
+      objectReference: {fileID: 2100000, guid: 617d9be015db68348a623b01ea51a8c5, type: 2}
     - target: {fileID: 4457522475464187353, guid: 93291240918814b408a15aabfffcf57e,
         type: 3}
       propertyPath: pauseCanvas
