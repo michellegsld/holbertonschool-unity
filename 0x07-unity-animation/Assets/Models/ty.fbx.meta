@@ -11,37 +11,37 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Boy01_Hair_MAT
-    second: {fileID: 2100000, guid: 8a2604d9a75d3af4292c1fd7c6bd1ceb, type: 2}
+    second: {fileID: 2100000, guid: 899766ed7724e5f4b945d76866f7ceb5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Boy01_Hands_MAT
-    second: {fileID: 2100000, guid: c10f363b2d4422d42908297d70100aee, type: 2}
+    second: {fileID: 2100000, guid: ff78e08ab7453704a954c09e8a5413f8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Boy01_Head_MAT
-    second: {fileID: 2100000, guid: 0fe74cd8aea4d494bbd0633f3eb96c2c, type: 2}
+    second: {fileID: 2100000, guid: 4a3a251b751cfc44eaae7d8f4df96b98, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Boy01_LowerBody_MAT
-    second: {fileID: 2100000, guid: 13c3d9195b5889242b9ebb444705712d, type: 2}
+    second: {fileID: 2100000, guid: 037b620738975984ea50db5e90262b75, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Boy01_Scarf_MAT
-    second: {fileID: 2100000, guid: 8a3677eeb1673184b8f43df6df6e074d, type: 2}
+    second: {fileID: 2100000, guid: e5f51b8ba0e41d84f9d76e93200c4b19, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Boy01_Shoes_MAT
-    second: {fileID: 2100000, guid: 4d88936dc43366343bac62567edb73ec, type: 2}
+    second: {fileID: 2100000, guid: fa29ae5a77028544cbaa9c3bc3b7404c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Boy01_UpperBody_MAT
-    second: {fileID: 2100000, guid: 7a2b5277cf679c647935d096aa42c60a, type: 2}
+    second: {fileID: 2100000, guid: 55a34c175daec574dbb56f61ca3945e5, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
