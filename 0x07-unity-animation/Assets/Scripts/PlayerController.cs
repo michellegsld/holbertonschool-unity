@@ -120,8 +120,8 @@ public class PlayerController : MonoBehaviour
             else
             {
                 currAnim.SetTrigger("FallingToImpactTrigger");
-                currAnim.SetTrigger("ImpactToUpTrigger");
-                currAnim.SetTrigger("UpToIdleTrigger");
+                //currAnim.SetTrigger("ImpactToUpTrigger");
+                //currAnim.SetTrigger("UpToIdleTrigger");
             }
 
             onPlatform = true;

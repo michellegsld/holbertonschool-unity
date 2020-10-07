@@ -46985,6 +46985,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7455970734589629005, guid: 93291240918814b408a15aabfffcf57e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7833686898177467386, guid: 93291240918814b408a15aabfffcf57e,
         type: 3}
       propertyPath: m_ApplyRootMotion
