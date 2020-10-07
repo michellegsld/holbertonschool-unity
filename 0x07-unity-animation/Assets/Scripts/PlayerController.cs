@@ -102,18 +102,18 @@ public class PlayerController : MonoBehaviour
     // Called when the player collides with an object
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Platform")
+        if (onPlatform == false && collision.gameObject.tag == "Platform")
         {
-            onPlatform = true;
-        }
+            if (currentSpeed == 0)
+            {
+                currAnim.SetTrigger("JumpToIdleTrigger");
+            }
+            else
+            {
+                currAnim.SetTrigger("JumpToRunningTrigger");
+            }
 
-        if (currentSpeed == 0 && currAnim)
-        {
-            currAnim.SetTrigger("JumpToIdleTrigger");
-        }
-        else if (currAnim)
-        {
-            currAnim.SetTrigger("JumpToRunningTrigger");
+            onPlatform = true;
         }
     }
 
