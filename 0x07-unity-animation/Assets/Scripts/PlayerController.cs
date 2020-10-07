@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]    // In order to see it in the inspector
     private Rigidbody player;
     private Transform mainCam;
+    [SerializeField]
+    private Animator currAnim;
 
     private bool onPlatform = true;
     public float speed = 10f;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject pauseCanvas;
     public GameObject winCanvas;
 
+    // For movement
     float turnSmoothVelocity;
     float speedSmoothVelocity;
     float currentSpeed;
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         player = GetComponent<Rigidbody>();
         mainCam = Camera.main.transform;
+        currAnim = player.transform.GetChild(0).gameObject.GetComponent<Animator>();
 
         // To use the back button in the options menu
         PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
@@ -58,6 +62,15 @@ public class PlayerController : MonoBehaviour
         currentSpeed = Mathf.SmoothDamp(currentSpeed, speed * playerMove.magnitude, ref speedSmoothVelocity, 0.0f);
 
         player.transform.Translate(player.transform.forward * currentSpeed * Time.deltaTime, Space.World);
+
+        if (currentSpeed == 0)
+        {
+            currAnim.SetTrigger("RunningToIdleTrigger");
+        }
+        else
+        {
+            currAnim.SetTrigger("IdleToRunningTrigger");
+        }
 
         // If player falls off platform
         if (player.transform.position.y <= -10)
