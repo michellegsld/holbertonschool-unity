@@ -107,11 +107,11 @@ public class PlayerController : MonoBehaviour
             onPlatform = true;
         }
 
-        if (currentSpeed == 0)
+        if (currentSpeed == 0 && currAnim)
         {
             currAnim.SetTrigger("JumpToIdleTrigger");
         }
-        else
+        else if (currAnim)
         {
             currAnim.SetTrigger("JumpToRunningTrigger");
         }
