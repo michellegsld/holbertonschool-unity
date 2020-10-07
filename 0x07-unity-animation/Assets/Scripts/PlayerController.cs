@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]    // In order to see it in the inspector
     private Rigidbody player;
+    private Transform mainCam;
 
     private bool onPlatform = true;
     public float speed = 10f;
@@ -15,10 +16,15 @@ public class PlayerController : MonoBehaviour
     public GameObject pauseCanvas;
     public GameObject winCanvas;
 
+    float turnSmoothVelocity;
+    float speedSmoothVelocity;
+    float currentSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Rigidbody>();
+        mainCam = Camera.main.transform;
 
         // To use the back button in the options menu
         PlayerPrefs.SetString("lastLoadedScene", SceneManager.GetActiveScene().name);
@@ -39,11 +45,24 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 playerMove = new Vector3(x, 0f, z).normalized * speed * Time.deltaTime;
-        player.transform.Translate(playerMove, Space.Self);
+        Vector3 playerMove = new Vector3(x, 0f, z).normalized;
 
+        // If input is greater than 0
+        if (playerMove != Vector3.zero)
+        {
+            float playerRotation = Mathf.Atan2(playerMove.x, playerMove.z) * Mathf.Rad2Deg + mainCam.eulerAngles.y;
+            player.transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(player.transform.eulerAngles.y, playerRotation, ref turnSmoothVelocity, 0.0f); // 0.05f to immediately turn w/o circling
+        }
+
+        // Last part is 0.0f to rid of icy motion
+        currentSpeed = Mathf.SmoothDamp(currentSpeed, speed * playerMove.magnitude, ref speedSmoothVelocity, 0.0f);
+
+        player.transform.Translate(player.transform.forward * currentSpeed * Time.deltaTime, Space.World);
+
+        // If player falls off platform
         if (player.transform.position.y <= -10)
         {
+            // The player will respawn
             player.transform.position = new Vector3(0, 10, 0);
         }
 

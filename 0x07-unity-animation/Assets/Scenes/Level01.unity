@@ -46910,6 +46910,11 @@ PrefabInstance:
       propertyPath: winCanvas
       value: 
       objectReference: {fileID: 732268374}
+    - target: {fileID: 4457522475464187359, guid: 93291240918814b408a15aabfffcf57e,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4457522475464187360, guid: 93291240918814b408a15aabfffcf57e,
         type: 3}
       propertyPath: TimerText
