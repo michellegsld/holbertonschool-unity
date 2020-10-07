@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Animator currAnim;
 
     private bool onPlatform = true;
+    private bool isJumping = false;
     public float speed = 10f;
 
     public GameObject pauseCanvas;
@@ -75,6 +76,8 @@ public class PlayerController : MonoBehaviour
         // If player falls off platform
         if (player.transform.position.y <= -10)
         {
+            currAnim.SetTrigger("JumpToFallingTrigger");
+
             // The player will respawn
             player.transform.position = new Vector3(0, 10, 0);
         }
@@ -92,6 +95,8 @@ public class PlayerController : MonoBehaviour
         //player.velocity = inputVector; //(OLD) Move player according to keys inputed before
         if (Input.GetKey(KeyCode.Space) && onPlatform == true)
         {
+            isJumping = true;
+
             // (OLD) player.AddForce(Vector3.up * jump);
             Vector3 movement = new Vector3(0, 0.0F, 0) * speed * Time.deltaTime;
             movement.y = 5.5f;
@@ -104,16 +109,23 @@ public class PlayerController : MonoBehaviour
     {
         if (onPlatform == false && collision.gameObject.tag == "Platform")
         {
-            if (currentSpeed == 0)
+            if (currentSpeed == 0 && isJumping)
             {
                 currAnim.SetTrigger("JumpToIdleTrigger");
             }
-            else
+            else if (isJumping)
             {
                 currAnim.SetTrigger("JumpToRunningTrigger");
             }
+            else
+            {
+                currAnim.SetTrigger("FallingToImpactTrigger");
+                currAnim.SetTrigger("ImpactToUpTrigger");
+                currAnim.SetTrigger("UpToIdleTrigger");
+            }
 
             onPlatform = true;
+            isJumping = false;
         }
     }
 
@@ -122,13 +134,17 @@ public class PlayerController : MonoBehaviour
     {
         onPlatform = false;
 
-        if (currentSpeed == 0)
+        if (currentSpeed == 0 && isJumping)
         {
             currAnim.SetTrigger("IdleToJumpTrigger");
         }
-        else
+        else if (isJumping)
         {
             currAnim.SetTrigger("RunningToJumpTrigger");
+        }
+        else
+        {
+            currAnim.SetTrigger("RunningToFallingTrigger");
         }
     }
 }
