@@ -63,11 +63,11 @@ public class PlayerController : MonoBehaviour
 
         player.transform.Translate(player.transform.forward * currentSpeed * Time.deltaTime, Space.World);
 
-        if (currentSpeed == 0)
+        if (currentSpeed == 0 && onPlatform)
         {
             currAnim.SetTrigger("RunningToIdleTrigger");
         }
-        else
+        else if (onPlatform)
         {
             currAnim.SetTrigger("IdleToRunningTrigger");
         }
@@ -103,12 +103,31 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Platform")
+        {
             onPlatform = true;
+            if (currentSpeed == 0)
+            {
+                currAnim.SetTrigger("JumpToIdleTrigger");
+            }
+            else
+            {
+                currAnim.SetTrigger("JumpToRunningTrigger");
+            }
+        }
     }
 
     // Called when the player is not touching another object anymore
     void OnCollisionExit(Collision collision)
     {
         onPlatform = false;
+
+        if (currentSpeed == 0)
+        {
+            currAnim.SetTrigger("IdleToJumpTrigger");
+        }
+        else
+        {
+            currAnim.SetTrigger("RunningToJumpTrigger");
+        }
     }
 }
