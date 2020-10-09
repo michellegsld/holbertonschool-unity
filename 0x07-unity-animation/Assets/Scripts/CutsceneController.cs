@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Diagnostics;
+using System.Threading;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +22,8 @@ public class CutsceneController : MonoBehaviour
 
         Cursor.visible = false; // Set here although in CameraController because script is not initially enabled
                                 // Not enabled for bug fix of camera jump from user input during Intro01
+
+        Time.timeScale = 1;
     }
 
     // Function called by animation event (end of Intro01)

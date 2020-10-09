@@ -9,11 +9,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]    // In order to see it in the inspector
     private Rigidbody player;
     private Transform mainCam;
-    [SerializeField]
-    private Animator currAnim;
+    private Animator currAnim;     // Usually called: anim
 
     private bool onPlatform = true;
     private bool isJumping = false;
+    private bool isFalling = false;
+    private bool canMove = true;
     public float speed = 10f;
 
     public GameObject pauseCanvas;
@@ -24,9 +25,12 @@ public class PlayerController : MonoBehaviour
     float speedSmoothVelocity;
     float currentSpeed;
 
+    public int collisions = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Set player, main camera, and animator
         player = GetComponent<Rigidbody>();
         mainCam = Camera.main.transform;
         currAnim = player.transform.GetChild(0).gameObject.GetComponent<Animator>();
@@ -44,42 +48,60 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //inputVector = new Vector3(Input.GetAxis("Horizontal") * speed, 0, Input.GetAxis("Vertical") * speed); //(OLD) Keys inputed
-
-        // Controls player movement
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 playerMove = new Vector3(x, 0f, z).normalized;
-
-        // If input is greater than 0
-        if (playerMove != Vector3.zero)
+        // Main purpose: to reset canMove after FallingDown sub-state, which means it's not falling anymore
+        if (Animator.StringToHash("Base Layer.Happy Idle") == currAnim.GetCurrentAnimatorStateInfo(0).fullPathHash)
         {
-            float playerRotation = Mathf.Atan2(playerMove.x, playerMove.z) * Mathf.Rad2Deg + mainCam.eulerAngles.y;
-            player.transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(player.transform.eulerAngles.y, playerRotation, ref turnSmoothVelocity, 0.0f); // 0.05f to immediately turn w/o circling
+            canMove = true;
+            isFalling = false;
         }
 
-        // Last part is 0.0f to rid of icy motion
-        currentSpeed = Mathf.SmoothDamp(currentSpeed, speed * playerMove.magnitude, ref speedSmoothVelocity, 0.0f);
-
-        player.transform.Translate(player.transform.forward * currentSpeed * Time.deltaTime, Space.World);
-
-        if (currentSpeed == 0 && onPlatform)
+        if (canMove)
         {
-            currAnim.SetTrigger("RunningToIdleTrigger");
-        }
-        else if (onPlatform)
-        {
-            currAnim.SetTrigger("IdleToRunningTrigger");
+            // Controls player movement
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 playerMove = new Vector3(x, 0f, z).normalized;
+
+            // If input is greater than 0
+            if (playerMove != Vector3.zero)
+            {
+                float playerRotation = Mathf.Atan2(playerMove.x, playerMove.z) * Mathf.Rad2Deg + mainCam.eulerAngles.y;
+                player.transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(player.transform.eulerAngles.y, playerRotation, ref turnSmoothVelocity, 0.0f); // 0.05f to immediately turn w/o circling
+            }
+
+            // Last part is 0.0f to rid of icy motion, magnitude to tell if it moved
+            currentSpeed = Mathf.SmoothDamp(currentSpeed, speed * playerMove.magnitude, ref speedSmoothVelocity, 0.0f);
+
+            player.transform.Translate(player.transform.forward * currentSpeed * Time.deltaTime, Space.World);
+
+            // Now player can still move while jumping/falling w/o triggering movement animations
+            if (!isJumping && !isFalling && onPlatform)
+            {
+                if (currentSpeed == 0)
+                {
+                    currAnim.SetTrigger("RunningToIdleTrigger");
+                }
+                else
+                {
+                    currAnim.SetTrigger("IdleToRunningTrigger");
+                }
+            }
         }
 
-        // If player falls off platform
-        if (player.transform.position.y <= -10)
+        // In order to change Jump animation into Falling animation
+        if (player.transform.position.y <= -3 && isJumping)
         {
             currAnim.SetTrigger("JumpToFallingTrigger");
 
-            // The player will respawn
-            player.transform.position = new Vector3(0, 10, 0);
+            isJumping = false;
+            isFalling = true;
+        }
+
+        // Once the player hits a certain point, they will respawn
+        if (player.transform.position.y <= -15)
+        {
+            player.transform.position = new Vector3(0, 15, 0);
         }
 
         // Opens pause menu
@@ -92,12 +114,11 @@ public class PlayerController : MonoBehaviour
     // Called according to the framerate
     private void FixedUpdate()
     {
-        //player.velocity = inputVector; //(OLD) Move player according to keys inputed before
-        if (Input.GetKey(KeyCode.Space) && onPlatform == true)
+        // For the user to jump, while they are on the platform and they can move
+        if (Input.GetKey(KeyCode.Space) && onPlatform && canMove)
         {
             isJumping = true;
 
-            // (OLD) player.AddForce(Vector3.up * jump);
             Vector3 movement = new Vector3(0, 0.0F, 0) * speed * Time.deltaTime;
             movement.y = 5.5f;
             player.velocity = movement;
@@ -107,6 +128,9 @@ public class PlayerController : MonoBehaviour
     // Called when the player collides with an object
     void OnCollisionEnter(Collision collision)
     {
+        collisions++;
+
+        // If they are not on a platform and collide with one
         if (onPlatform == false && collision.gameObject.tag == "Platform")
         {
             if (currentSpeed == 0 && isJumping)
@@ -117,11 +141,10 @@ public class PlayerController : MonoBehaviour
             {
                 currAnim.SetTrigger("JumpToRunningTrigger");
             }
-            else
+            else if (canMove && isFalling)   // This means they hit the starter platform
             {
+                canMove = false;
                 currAnim.SetTrigger("FallingToImpactTrigger");
-                //currAnim.SetTrigger("ImpactToUpTrigger");
-                //currAnim.SetTrigger("UpToIdleTrigger");
             }
 
             onPlatform = true;
@@ -132,19 +155,24 @@ public class PlayerController : MonoBehaviour
     // Called when the player is not touching another object anymore
     void OnCollisionExit(Collision collision)
     {
-        onPlatform = false;
+        collisions--;
 
-        if (currentSpeed == 0 && isJumping)
+        if (onPlatform && collision.gameObject.tag == "Platform")
         {
-            currAnim.SetTrigger("IdleToJumpTrigger");
-        }
-        else if (isJumping)
-        {
-            currAnim.SetTrigger("RunningToJumpTrigger");
-        }
-        else
-        {
-            currAnim.SetTrigger("RunningToFallingTrigger");
+            onPlatform = false;
+            if (currentSpeed == 0 && isJumping)
+            {
+                currAnim.SetTrigger("IdleToJumpTrigger");
+            }
+            else if (isJumping)
+            {
+                currAnim.SetTrigger("RunningToJumpTrigger");
+            }
+            else if (canMove && collisions == 0)
+            {
+                isFalling = true;
+                currAnim.SetTrigger("RunningToFallingTrigger");
+            }
         }
     }
 }

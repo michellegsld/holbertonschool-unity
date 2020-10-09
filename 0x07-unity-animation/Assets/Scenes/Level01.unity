@@ -8606,9 +8606,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 334198324}
     m_Modifications:
+    - target: {fileID: 100000, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
       propertyPath: m_Name
       value: Platform24
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16364,7 +16372,6 @@ GameObject:
   m_Component:
   - component: {fileID: 707699413}
   - component: {fileID: 707699412}
-  - component: {fileID: 707699411}
   - component: {fileID: 707699410}
   - component: {fileID: 707699414}
   - component: {fileID: 707699415}
@@ -16394,14 +16401,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!81 &707699411
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707699409}
-  m_Enabled: 1
 --- !u!20 &707699412
 Camera:
   m_ObjectHideFlags: 0

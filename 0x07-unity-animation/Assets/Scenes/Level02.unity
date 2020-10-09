@@ -37439,9 +37439,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 964736601}
     m_Modifications:
+    - target: {fileID: 100000, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
       propertyPath: m_Name
       value: Platform24
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
       propertyPath: m_LocalPosition.z
