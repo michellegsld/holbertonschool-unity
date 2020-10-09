@@ -46894,11 +46894,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3319932707157736443, guid: 93291240918814b408a15aabfffcf57e,
-        type: 3}
-      propertyPath: m_CustomSkybox
-      value: 
-      objectReference: {fileID: 2100000, guid: 617d9be015db68348a623b01ea51a8c5, type: 2}
     - target: {fileID: 4457522475464187353, guid: 93291240918814b408a15aabfffcf57e,
         type: 3}
       propertyPath: pauseCanvas
@@ -46909,11 +46904,6 @@ PrefabInstance:
       propertyPath: winCanvas
       value: 
       objectReference: {fileID: 732268374}
-    - target: {fileID: 4457522475464187359, guid: 93291240918814b408a15aabfffcf57e,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 4457522475464187360, guid: 93291240918814b408a15aabfffcf57e,
         type: 3}
       propertyPath: TimerText
@@ -46983,16 +46973,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7455970734589629005, guid: 93291240918814b408a15aabfffcf57e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833686898177467386, guid: 93291240918814b408a15aabfffcf57e,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93291240918814b408a15aabfffcf57e, type: 3}

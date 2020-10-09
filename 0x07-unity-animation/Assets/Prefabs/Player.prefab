@@ -131,6 +131,7 @@ MonoBehaviour:
   speed: 10
   pauseCanvas: {fileID: 0}
   winCanvas: {fileID: 0}
+  collisions: 0
 --- !u!114 &4457522475464187360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +283,7 @@ Skybox:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5520394795756357607}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 0}
+  m_CustomSkybox: {fileID: 2100000, guid: 617d9be015db68348a623b01ea51a8c5, type: 2}
 --- !u!1001 &4457522476611493483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -358,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: af89a01407880474194a2dc8557bf5b9,
         type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af89a01407880474194a2dc8557bf5b9, type: 3}
