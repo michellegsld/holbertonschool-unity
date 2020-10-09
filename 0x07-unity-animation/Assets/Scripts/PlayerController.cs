@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private bool isFalling = false;
     private bool canMove = true;
     public float speed = 10f;
+    public int collisions = 0;
 
     public GameObject pauseCanvas;
     public GameObject winCanvas;
@@ -24,8 +25,6 @@ public class PlayerController : MonoBehaviour
     float turnSmoothVelocity;
     float speedSmoothVelocity;
     float currentSpeed;
-
-    public int collisions = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -157,6 +156,7 @@ public class PlayerController : MonoBehaviour
     {
         collisions--;
 
+        // If they were on a platform and un-collided
         if (onPlatform && collision.gameObject.tag == "Platform")
         {
             onPlatform = false;

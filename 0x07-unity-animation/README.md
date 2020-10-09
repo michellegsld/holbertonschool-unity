@@ -12,5 +12,8 @@ Credit:
 Skyboxes: Farland Skies - Cloudy Crown
 This is where the skyboxes were acquired: https://assetstore.unity.com/packages/2d/textures-materials/sky/farland-skies-cloudy-crown-60004
 
-Models: Kenney's Nature Pack Extended
+Non-player Models: Kenney's Nature Pack Extended
 This is the website from which the models were acquired: https://kenney.nl/assets/nature-pack-extended
+
+Animations: Mixamo
+This is where the animations were acquired: https://www.mixamo.com/#/
