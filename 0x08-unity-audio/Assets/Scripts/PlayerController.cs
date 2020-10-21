@@ -100,7 +100,8 @@ public class PlayerController : MonoBehaviour
         // Once the player hits a certain point, they will respawn
         if (player.transform.position.y <= -15)
         {
-            player.transform.position = new Vector3(0, 15, 0);
+            // Instead of 0, 15, 0 -> so can't move off platform and cause loop
+            player.transform.position = new Vector3(-2, 13, -4);
         }
 
         // Opens pause menu

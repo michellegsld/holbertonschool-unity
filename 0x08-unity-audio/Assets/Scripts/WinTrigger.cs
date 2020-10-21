@@ -6,11 +6,11 @@ using UnityEngine.UI;
 // Changes display of timer once player hits flag
 public class WinTrigger : MonoBehaviour
 {
-    public Text timerText;
     public Timer timerScript;
     public GameObject player;
     public GameObject timerCanvas;
     public GameObject winCanvas;
+    public AudioSource backgroundMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +30,13 @@ public class WinTrigger : MonoBehaviour
         // Display the win canvas
         winCanvas.gameObject.SetActive(true);
 
-        // (OLD) before win canvas
-        //timerScript.enabled = false;
-        //timerText.fontSize = 80;
-        //timerText.color = Color.green;
+        // Stop playing background music
+        backgroundMusic.Stop();
+
+        // In order to stop animations and player movement
+        Time.timeScale = 0;
+
+        // Stop camera movement on win
+        Camera.main.transform.GetComponent<CameraController>().enabled = false;
     }
 }
