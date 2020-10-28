@@ -9,6 +9,8 @@ public class Footsteps : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public AudioSource thumpSound;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -23,5 +25,10 @@ public class Footsteps : MonoBehaviour
     private AudioClip GetRandomClip()
     {
         return clips[UnityEngine.Random.Range(0, clips.Length)];
+    }
+
+    private void Land()
+    {
+        thumpSound.Play();
     }
 }
