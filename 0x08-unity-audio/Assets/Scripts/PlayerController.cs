@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
         if (player.transform.position.y <= -15)
         {
             // Instead of 0, 15, 0 -> so can't move off platform and cause loop
-            player.transform.position = new Vector3(-2, 13, -4);
+            player.transform.position = new Vector3(0, 13, -2);
         }
 
         // Opens pause menu
