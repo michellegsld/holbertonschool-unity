@@ -11,6 +11,7 @@ public class WinTrigger : MonoBehaviour
     public GameObject timerCanvas;
     public GameObject winCanvas;
     public AudioSource backgroundMusic;
+    public AudioSource winMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,9 @@ public class WinTrigger : MonoBehaviour
 
         // Stop playing background music
         backgroundMusic.Stop();
+
+        // Start playing the win music
+        winMusic.Play();
 
         // In order to stop animations and player movement
         Time.timeScale = 0;
