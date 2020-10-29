@@ -31,6 +31,7 @@ public class PauseMenu : MonoBehaviour
         // Sets Time Scale to 0 to "freeze" any movement
         Time.timeScale = 0;
 
+        // Muffle all sound
         paused.TransitionTo(0.0f);
 
         // Sets camera turn speed to 0 to prevent looking around
@@ -56,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         // Activates Time Scale to normal value
         Time.timeScale = 1;
 
+        // Un-muffle all sound
         play.TransitionTo(0.0f);
 
         // Sets camera turn speed to 1 to resume looking around
@@ -81,6 +83,9 @@ public class PauseMenu : MonoBehaviour
         // Gets current scene
         Scene level = SceneManager.GetActiveScene();
 
+        // Un-muffle all sound
+        play.TransitionTo(0.0f);
+
         // Re-loads the current scene by getting its name
         SceneManager.LoadScene(level.name);
     }
@@ -88,12 +93,18 @@ public class PauseMenu : MonoBehaviour
     // Opens main menu
     public void MainMenu()
     {
+        // Un-muffle all sound
+        play.TransitionTo(0.0f);
+
         SceneManager.LoadScene("MainMenu");
     }
 
     // Opens options menu
     public void Options()
     {
+        // Un-muffle all sound
+        play.TransitionTo(0.0f);
+
         SceneManager.LoadScene("Options");
     }
 }

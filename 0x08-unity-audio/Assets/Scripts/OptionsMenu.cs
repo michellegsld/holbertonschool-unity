@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 // Controls everything in the options menu
 public class OptionsMenu : MonoBehaviour
 {
     public Toggle invertToggle;
+    public Slider BGM;
+    public Slider SFX;
 
     void Start()
     {
