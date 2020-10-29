@@ -2835,8 +2835,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invertToggle: {fileID: 1756825611}
-  BGM: {fileID: 0}
-  SFX: {fileID: 0}
+  BGM: {fileID: 1339815236}
+  SFX: {fileID: 1718683342}
+  mixer: {fileID: 24100000, guid: 6728ec41338c354428242936c1194989, type: 2}
 --- !u!114 &6741943828439194590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3050,6 +3051,7 @@ MonoBehaviour:
   invertToggle: {fileID: 1756825611}
   BGM: {fileID: 1339815236}
   SFX: {fileID: 1718683342}
+  mixer: {fileID: 24100000, guid: 6728ec41338c354428242936c1194989, type: 2}
 --- !u!114 &8754247411038191062
 MonoBehaviour:
   m_ObjectHideFlags: 0
