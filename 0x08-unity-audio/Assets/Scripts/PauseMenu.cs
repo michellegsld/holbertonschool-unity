@@ -4,6 +4,7 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 // Class for pausing the game
@@ -11,6 +12,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
     private static Stopwatch timer;
+    public AudioMixerSnapshot play;
+    public AudioMixerSnapshot paused;
 
     // Update is called once per frame
     void Update()
@@ -27,6 +30,8 @@ public class PauseMenu : MonoBehaviour
     {
         // Sets Time Scale to 0 to "freeze" any movement
         Time.timeScale = 0;
+
+        paused.TransitionTo(0.0f);
 
         // Sets camera turn speed to 0 to prevent looking around
         CameraController.turnSpeed = 0;
@@ -50,6 +55,8 @@ public class PauseMenu : MonoBehaviour
     {
         // Activates Time Scale to normal value
         Time.timeScale = 1;
+
+        play.TransitionTo(0.0f);
 
         // Sets camera turn speed to 1 to resume looking around
         CameraController.turnSpeed = 1;

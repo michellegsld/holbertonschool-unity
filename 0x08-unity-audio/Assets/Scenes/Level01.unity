@@ -22754,6 +22754,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 906650609}
+  play: {fileID: -2385264456839592805, guid: 6728ec41338c354428242936c1194989, type: 2}
+  paused: {fileID: 3191995131332974404, guid: 6728ec41338c354428242936c1194989, type: 2}
 --- !u!1001 &912794704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53309,6 +53311,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1047356403583242372, guid: 33dd4587dae8b934cb36488e696f0e12,
+        type: 3}
+      propertyPath: play
+      value: 
+      objectReference: {fileID: -2385264456839592805, guid: 6728ec41338c354428242936c1194989,
+        type: 2}
+    - target: {fileID: 1047356403583242372, guid: 33dd4587dae8b934cb36488e696f0e12,
+        type: 3}
+      propertyPath: paused
+      value: 
+      objectReference: {fileID: 3191995131332974404, guid: 6728ec41338c354428242936c1194989,
+        type: 2}
     - target: {fileID: 3574246507945008666, guid: 33dd4587dae8b934cb36488e696f0e12,
         type: 3}
       propertyPath: m_LocalPosition.x
