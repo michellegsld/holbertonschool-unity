@@ -14,3 +14,14 @@ Then animations were to be added to the layout. The design and feel wasn't speci
 Afterward, the links had to be scripted in order to be interactive. This means when the buttons were pressed on the device screen, they had to open the associated link or app. The buttons also had to give some sort of visual/audible feedback when pressed, this could be a button color change or a click sound. The accessibility guidelines had to be kept in mind for the UI/UX decisions as well.
 <br><br>
 Lastly, the builds of the business card scene had to be made. The `ARBuisnessCard` scene had two builds, one for iOS and another for Android.
+<br><br><br>
+Credit:
+<br><br>
+Image Target: Created by me with the application MS Paint
+<br><br>
+Logo/Icon Buttons: Retrieved off the https://icons8.com website, re-colored by me.
+<li>LinkedIn: https://icons8.com/icon/60ZV_wYC0BM2/linkedin</li>
+<li>GitHub: https://icons8.com/icon/80462/github</li>
+<li>Email: https://icons8.com/icon/80728/email</li>
+<li>Twitter: https://icons8.com/icon/80447/twitter</li>
+<li>Medium: https://icons8.com/icon/p9eK5jB3PGJi/wattpad (edited to be flipped both horizontally and vertically)</li>
