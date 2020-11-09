@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class OpenLink : MonoBehaviour
 {
-    public void SpriteClick()
+    public void SpriteClick(string url)
     {
-        Application.OpenURL("https://www.linkedin.com/in/michelle-giraldo-759990193/");
+        Application.OpenURL(url);
         Debug.Log("is this working?");
+    }
+
+    public void CreateEmail()
+    {
+        string email = "michellegsld@gmail.com";
+        Application.OpenURL("mailto:" + email);
+        Debug.Log("Open the email app!");
     }
 }

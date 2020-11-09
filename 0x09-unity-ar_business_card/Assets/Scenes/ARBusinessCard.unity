@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 473420833}
   - component: {fileID: 473420834}
   - component: {fileID: 473420835}
+  - component: {fileID: 473420836}
   m_Layer: 0
   m_Name: ButtonMedium
   m_TagString: Untagged
@@ -313,17 +314,29 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 473420836}
+          m_MethodName: SpriteClick
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: https://medium.com/@michellegsld
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &473420836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473420832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de51b1de06f662f4fab60a20555a65f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &494957831
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +348,7 @@ GameObject:
   - component: {fileID: 494957832}
   - component: {fileID: 494957833}
   - component: {fileID: 494957834}
+  - component: {fileID: 494957835}
   m_Layer: 0
   m_Name: ButtonTwitter
   m_TagString: Untagged
@@ -423,45 +437,29 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 494957835}
+          m_MethodName: SpriteClick
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: https://twitter.com/michellegsld
             m_BoolArgument: 0
           m_CallState: 2
---- !u!21 &604410251
-Material:
-  serializedVersion: 6
+--- !u!114 &494957835
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'BusinessCardMaterial
-
-    14052'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8a33ea6247004788929564585ae9d2fb, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_GameObject: {fileID: 494957831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de51b1de06f662f4fab60a20555a65f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1325593330
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +471,7 @@ GameObject:
   - component: {fileID: 1325593331}
   - component: {fileID: 1325593332}
   - component: {fileID: 1325593333}
+  - component: {fileID: 1325593334}
   m_Layer: 0
   m_Name: ButtonEmail
   m_TagString: Untagged
@@ -561,17 +560,29 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: 
+        - m_Target: {fileID: 1325593334}
+          m_MethodName: CreateEmail
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1325593334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325593330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de51b1de06f662f4fab60a20555a65f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1411861618
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +705,7 @@ GameObject:
   - component: {fileID: 1482531556}
   - component: {fileID: 1482531557}
   - component: {fileID: 1482531558}
+  - component: {fileID: 1482531559}
   m_Layer: 0
   m_Name: ButtonGitHub
   m_TagString: Untagged
@@ -782,17 +794,57 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 1482531559}
+          m_MethodName: SpriteClick
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: https://github.com/michellegsld
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1482531559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482531555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de51b1de06f662f4fab60a20555a65f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!21 &1553847851
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'BusinessCardMaterial
+
+    14064'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 8a33ea6247004788929564585ae9d2fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1636663575
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +892,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 604410251}
+  - {fileID: 1553847851}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1364,13 +1416,13 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1904476352}
           m_MethodName: SpriteClick
-          m_Mode: 1
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: https://www.linkedin.com/in/michelle-giraldo-759990193/
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1973840411
