@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 473420834}
   - component: {fileID: 473420835}
   - component: {fileID: 473420836}
+  - component: {fileID: 473420837}
   m_Layer: 0
   m_Name: ButtonMedium
   m_TagString: Untagged
@@ -337,6 +338,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de51b1de06f662f4fab60a20555a65f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &473420837
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473420832}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.8, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 4.8}
+  m_EdgeRadius: 0
 --- !u!1 &494957831
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +376,7 @@ GameObject:
   - component: {fileID: 494957833}
   - component: {fileID: 494957834}
   - component: {fileID: 494957835}
+  - component: {fileID: 494957836}
   m_Layer: 0
   m_Name: ButtonTwitter
   m_TagString: Untagged
@@ -460,6 +488,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de51b1de06f662f4fab60a20555a65f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &494957836
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494957831}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.8, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 4.8}
+  m_EdgeRadius: 0
 --- !u!1 &1325593330
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +526,7 @@ GameObject:
   - component: {fileID: 1325593332}
   - component: {fileID: 1325593333}
   - component: {fileID: 1325593334}
+  - component: {fileID: 1325593335}
   m_Layer: 0
   m_Name: ButtonEmail
   m_TagString: Untagged
@@ -583,6 +638,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de51b1de06f662f4fab60a20555a65f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1325593335
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325593330}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.8, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 4.8}
+  m_EdgeRadius: 0
 --- !u!1 &1411861618
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +787,7 @@ GameObject:
   - component: {fileID: 1482531557}
   - component: {fileID: 1482531558}
   - component: {fileID: 1482531559}
+  - component: {fileID: 1482531560}
   m_Layer: 0
   m_Name: ButtonGitHub
   m_TagString: Untagged
@@ -817,6 +899,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de51b1de06f662f4fab60a20555a65f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1482531560
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482531555}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.8, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 4.8}
+  m_EdgeRadius: 0
 --- !u!21 &1553847851
 Material:
   serializedVersion: 6
@@ -873,7 +981,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636663575}
-  m_Mesh: {fileID: 1777958982}
+  m_Mesh: {fileID: 1844416220}
 --- !u!23 &1636663577
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -937,7 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a917f0af64a6423093132dab321c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusFilter: 1
+  StatusFilter: 0
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
@@ -1139,13 +1247,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1777958982
+--- !u!43 &1844416220
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh14042
+  m_Name: ImageTargetMesh14054
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1314,6 +1422,7 @@ GameObject:
   - component: {fileID: 1904476351}
   - component: {fileID: 1904476353}
   - component: {fileID: 1904476352}
+  - component: {fileID: 1904476354}
   m_Layer: 0
   m_Name: ButtonLinkedIn
   m_TagString: Untagged
@@ -1425,6 +1534,32 @@ MonoBehaviour:
             m_StringArgument: https://www.linkedin.com/in/michelle-giraldo-759990193/
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!61 &1904476354
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904476349}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.8, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 4.8}
+  m_EdgeRadius: 0
 --- !u!1 &1973840411
 GameObject:
   m_ObjectHideFlags: 0
