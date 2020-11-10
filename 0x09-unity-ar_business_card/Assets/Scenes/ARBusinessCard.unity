@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 524631855}
   - component: {fileID: 524631854}
   - component: {fileID: 524631853}
+  - component: {fileID: 524631857}
   m_Layer: 5
   m_Name: ButtonMedium
   m_TagString: Untagged
@@ -531,6 +532,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524631851}
   m_CullTransparentMesh: 0
+--- !u!95 &524631857
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524631851}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09c98b5ccd380b349879fae8cb02c48f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!21 &560887923
 Material:
   serializedVersion: 6
@@ -923,6 +943,7 @@ GameObject:
   - component: {fileID: 1255864043}
   - component: {fileID: 1255864042}
   - component: {fileID: 1255864041}
+  - component: {fileID: 1255864045}
   m_Layer: 5
   m_Name: ButtonGitHub
   m_TagString: Untagged
@@ -1052,6 +1073,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255864039}
   m_CullTransparentMesh: 0
+--- !u!95 &1255864045
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255864039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4370370653733c94d81eeeeb5a6d2ed2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1290194653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1251,7 @@ GameObject:
   - component: {fileID: 1829817506}
   - component: {fileID: 1829817505}
   - component: {fileID: 1829817504}
+  - component: {fileID: 1829817508}
   m_Layer: 5
   m_Name: ButtonTwitter
   m_TagString: Untagged
@@ -1340,6 +1381,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829817502}
   m_CullTransparentMesh: 0
+--- !u!95 &1829817508
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829817502}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0fc567570224e544397be2948eefa070, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1862894409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1413,7 @@ GameObject:
   - component: {fileID: 1862894413}
   - component: {fileID: 1862894412}
   - component: {fileID: 1862894411}
+  - component: {fileID: 1862894415}
   m_Layer: 5
   m_Name: ButtonEmail
   m_TagString: Untagged
@@ -1482,6 +1543,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862894409}
   m_CullTransparentMesh: 0
+--- !u!95 &1862894415
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862894409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b383e885c28fb14688df27709d5a6bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1868126872
 GameObject:
   m_ObjectHideFlags: 0
