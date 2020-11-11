@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ARBusinessCard.unity
+    guid: 3be5c8f6b8bf15d45b2bc79cf4e60ee6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2d416afb2929ee94a8bd5904b52a138a,
       type: 2}
