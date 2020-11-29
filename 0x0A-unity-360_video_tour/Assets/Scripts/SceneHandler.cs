@@ -12,6 +12,7 @@ public class SceneHandler : MonoBehaviour
     public Material[] skyboxes;
     public GameObject[] spheres;
     public GameObject[] canvases;
+    public Animator currAnim;
 
     void Start()
     {
@@ -91,6 +92,7 @@ public class SceneHandler : MonoBehaviour
 
     public void Active(int i)
     {
+        currAnim.SetTrigger("Fade");
         Reset();
 
         spheres[i].SetActive(true);
@@ -102,6 +104,7 @@ public class SceneHandler : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
+        //  spheres[i].GetComponent<UnityEngine.Video.VideoPlayer>().Pause(); Trying to pause to not have that video jump
             spheres[i].SetActive(false);
             canvases[i].SetActive(false);
         }
