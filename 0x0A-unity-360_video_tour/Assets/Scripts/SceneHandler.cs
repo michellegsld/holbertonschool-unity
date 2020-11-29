@@ -113,7 +113,6 @@ public class SceneHandler : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-        //  spheres[i].GetComponent<UnityEngine.Video.Videoe.target>().Pause(); Trying to pause to not have that video jump
             spheres[i].SetActive(false);
             canvases[i].SetActive(false);
         }
