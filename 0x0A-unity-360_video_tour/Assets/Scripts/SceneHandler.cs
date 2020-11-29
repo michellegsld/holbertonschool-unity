@@ -12,7 +12,7 @@ public class SceneHandler : MonoBehaviour
     public Material[] skyboxes;
     public GameObject[] spheres;
     public GameObject[] canvases;
-    public Animator transitionAnim;
+    public Animator[] transitionAnims;
     private Animator buttonAnim;
 
     void Start()
@@ -95,7 +95,8 @@ public class SceneHandler : MonoBehaviour
     public IEnumerator Active(int i)
     {
         if (i >= 0) {
-            transitionAnim.SetTrigger("Fade");
+            transitionAnims[0].SetTrigger("Fade");
+            transitionAnims[1].SetTrigger("Fade");
             yield return new WaitForSeconds(1.25f);
             Reset();
         } else {
