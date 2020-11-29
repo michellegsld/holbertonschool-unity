@@ -28,65 +28,56 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
-        if (e.target.name == "LivingRoomButton")
-        {
+        if (e.target.name == "LivingRoomButton") {
             Active(0);
             Debug.Log("LivingRoomButton was clicked");
-        }
-        else if (e.target.name == "CantinaButton")
-        {
+        } else if (e.target.name == "CantinaButton") {
             Active(1);
             Debug.Log("CantinaButton was clicked");
-        }
-        else if (e.target.name == "CubeButton")
-        {
+        } else if (e.target.name == "CubeButton") {
             Active(2);
             Debug.Log("CubeButton was clicked");
-        }
-        else if (e.target.name == "MezzanineButton")
-        {
+        } else if (e.target.name == "MezzanineButton") {
             Active(3);
             Debug.Log("MezzanineButton was clicked");
+        } else if (e.target.name == "InfoButton") {
+            GameObject textBox = e.target.gameObject.transform.GetChild(0).gameObject;
+
+            if (textBox.activeSelf == true) {
+                textBox.SetActive(false);
+            } else {
+                textBox.SetActive(true);
+            }
         }
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
     {
-        if (e.target.name == "LivingRoomButton")
-        {
+        if (e.target.name == "LivingRoomButton") {
             Debug.Log("LivingRoomButton was entered");
-        }
-        else if (e.target.name == "CantinaButton")
-        {
+        } else if (e.target.name == "CantinaButton") {
             Debug.Log("CantinaButton was entered");
-        }
-        else if (e.target.name == "CubeButton")
-        {
+        } else if (e.target.name == "CubeButton") {
             Debug.Log("CubeButton was entered");
-        }
-        else if (e.target.name == "MezzanineButton")
-        {
+        } else if (e.target.name == "MezzanineButton") {
             Debug.Log("MezzanineButton was entered");
+        } else if (e.target.name == "LivingInfoButton") {
+            Debug.Log("InfoButton was entered");
         }
     }
 
     public void PointerOutside(object sender, PointerEventArgs e)
     {
-        if (e.target.name == "LivingRoomButton")
-        {
-            Debug.Log("LivingRoomButton was exited");
-        }
-        else if (e.target.name == "CantinaButton")
-        {
+        if (e.target.name == "LivingRoomButton") {
+            Debug.Log("LivingRoomButton was exited"); 
+        } else if (e.target.name == "CantinaButton") {
             Debug.Log("CantinaButton was exited");
-        }
-        else if (e.target.name == "CubeButton")
-        {
+        } else if (e.target.name == "CubeButton") {
             Debug.Log("CubeButton was exited");
-        }
-        else if (e.target.name == "MezzanineButton")
-        {
+        } else if (e.target.name == "MezzanineButton") {
             Debug.Log("MezzanineButton was exited");
+        } else if (e.target.name == "InfoButton") {
+            Debug.Log("InfoButton was exited");
         }
     }
 
