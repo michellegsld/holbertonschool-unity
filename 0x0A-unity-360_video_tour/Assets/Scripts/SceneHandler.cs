@@ -17,7 +17,7 @@ public class SceneHandler : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Active(0));
+        StartCoroutine(Active(-1));
     }
 
     void Awake()
@@ -62,20 +62,12 @@ public class SceneHandler : MonoBehaviour
         buttonAnim.SetBool("hover", true);
 
         if (e.target.name == "LivingRoomButton") {
-            //GameObject button = e.target.gameObject;
-            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z - 20);
             Debug.Log("LivingRoomButton was entered");
         } else if (e.target.name == "CantinaButton") {
-            //GameObject button = e.target.gameObject;
-            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z - 20);
             Debug.Log("CantinaButton was entered");
         } else if (e.target.name == "CubeButton") {
-            //GameObject button = e.target.gameObject;
-            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z - 20);
             Debug.Log("CubeButton was entered");
         } else if (e.target.name == "MezzanineButton") {
-            //GameObject button = e.target.gameObject;
-            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z - 20);
             Debug.Log("MezzanineButton was entered");
         } else if (e.target.name == "LivingInfoButton") {
             Debug.Log("InfoButton was entered");
@@ -88,20 +80,12 @@ public class SceneHandler : MonoBehaviour
         buttonAnim.SetBool("hover", false);
 
         if (e.target.name == "LivingRoomButton") {
-            //GameObject button = e.target.gameObject;
-            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z + 20);
             Debug.Log("LivingRoomButton was exited");
         } else if (e.target.name == "CantinaButton") {
-            //GameObject button = e.target.gameObject;
-            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z + 20);
             Debug.Log("CantinaButton was exited");
         } else if (e.target.name == "CubeButton") {
-            //GameObject button = e.target.gameObject;
-            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z + 20);
             Debug.Log("CubeButton was exited");
         } else if (e.target.name == "MezzanineButton") {
-            //GameObject button = e.target.gameObject;
-            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z + 20);
             Debug.Log("MezzanineButton was exited");
         } else if (e.target.name == "InfoButton") {
             Debug.Log("InfoButton was exited");
@@ -110,9 +94,13 @@ public class SceneHandler : MonoBehaviour
 
     public IEnumerator Active(int i)
     {
-        transitionAnim.SetTrigger("Fade");
-        yield return new WaitForSeconds(1.25f);
-        Reset();
+        if (i >= 0) {
+            transitionAnim.SetTrigger("Fade");
+            yield return new WaitForSeconds(1.25f);
+            Reset();
+        } else {
+            i = 0;
+        }
 
         spheres[i].SetActive(true);
         canvases[i].SetActive(true);
