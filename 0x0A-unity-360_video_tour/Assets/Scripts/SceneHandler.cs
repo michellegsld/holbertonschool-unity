@@ -17,7 +17,7 @@ public class SceneHandler : MonoBehaviour
 
     void Start()
     {
-        Active(0);
+        StartCoroutine(Active(0));
     }
 
     void Awake()
@@ -32,16 +32,16 @@ public class SceneHandler : MonoBehaviour
         buttonAnim = e.target.transform.gameObject.GetComponent<Animator>();
 
         if (e.target.name == "LivingRoomButton") {
-            Active(0);
+            StartCoroutine(Active(0));
             Debug.Log("LivingRoomButton was clicked");
         } else if (e.target.name == "CantinaButton") {
-            Active(1);
+            StartCoroutine(Active(1));
             Debug.Log("CantinaButton was clicked");
         } else if (e.target.name == "CubeButton") {
-            Active(2);
+            StartCoroutine(Active(2));
             Debug.Log("CubeButton was clicked");
         } else if (e.target.name == "MezzanineButton") {
-            Active(3);
+            StartCoroutine(Active(3));
             Debug.Log("MezzanineButton was clicked");
         } else if (e.target.name == "InfoButton") {
             GameObject textBox = e.target.gameObject.transform.GetChild(0).gameObject;
@@ -108,14 +108,16 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
-    public void Active(int i)
+    public IEnumerator Active(int i)
     {
         transitionAnim.SetTrigger("Fade");
+        yield return new WaitForSeconds(1.25f);
         Reset();
 
         spheres[i].SetActive(true);
         canvases[i].SetActive(true);
         RenderSettings.skybox = skyboxes[i];
+        yield break;
     }
 
     public void Reset()
