@@ -12,7 +12,8 @@ public class SceneHandler : MonoBehaviour
     public Material[] skyboxes;
     public GameObject[] spheres;
     public GameObject[] canvases;
-    public Animator currAnim;
+    public Animator transitionAnim;
+    private Animator buttonAnim;
 
     void Start()
     {
@@ -28,6 +29,8 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
+        buttonAnim = e.target.transform.gameObject.GetComponent<Animator>();
+
         if (e.target.name == "LivingRoomButton") {
             Active(0);
             Debug.Log("LivingRoomButton was clicked");
@@ -44,8 +47,10 @@ public class SceneHandler : MonoBehaviour
             GameObject textBox = e.target.gameObject.transform.GetChild(0).gameObject;
 
             if (textBox.activeSelf == true) {
+                buttonAnim.SetBool("open", false);
                 textBox.SetActive(false);
             } else {
+                buttonAnim.SetBool("open", true);
                 textBox.SetActive(true);
             }
         }
@@ -53,13 +58,24 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerInside(object sender, PointerEventArgs e)
     {
+        buttonAnim = e.target.transform.gameObject.GetComponent<Animator>();
+        buttonAnim.SetBool("hover", true);
+
         if (e.target.name == "LivingRoomButton") {
+            //GameObject button = e.target.gameObject;
+            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z - 20);
             Debug.Log("LivingRoomButton was entered");
         } else if (e.target.name == "CantinaButton") {
+            //GameObject button = e.target.gameObject;
+            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z - 20);
             Debug.Log("CantinaButton was entered");
         } else if (e.target.name == "CubeButton") {
+            //GameObject button = e.target.gameObject;
+            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z - 20);
             Debug.Log("CubeButton was entered");
         } else if (e.target.name == "MezzanineButton") {
+            //GameObject button = e.target.gameObject;
+            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z - 20);
             Debug.Log("MezzanineButton was entered");
         } else if (e.target.name == "LivingInfoButton") {
             Debug.Log("InfoButton was entered");
@@ -68,13 +84,24 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerOutside(object sender, PointerEventArgs e)
     {
+        buttonAnim = e.target.transform.gameObject.GetComponent<Animator>();
+        buttonAnim.SetBool("hover", false);
+
         if (e.target.name == "LivingRoomButton") {
-            Debug.Log("LivingRoomButton was exited"); 
+            //GameObject button = e.target.gameObject;
+            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z + 20);
+            Debug.Log("LivingRoomButton was exited");
         } else if (e.target.name == "CantinaButton") {
+            //GameObject button = e.target.gameObject;
+            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z + 20);
             Debug.Log("CantinaButton was exited");
         } else if (e.target.name == "CubeButton") {
+            //GameObject button = e.target.gameObject;
+            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z + 20);
             Debug.Log("CubeButton was exited");
         } else if (e.target.name == "MezzanineButton") {
+            //GameObject button = e.target.gameObject;
+            //button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y, button.transform.position.z + 20);
             Debug.Log("MezzanineButton was exited");
         } else if (e.target.name == "InfoButton") {
             Debug.Log("InfoButton was exited");
@@ -83,7 +110,7 @@ public class SceneHandler : MonoBehaviour
 
     public void Active(int i)
     {
-        currAnim.SetTrigger("Fade");
+        transitionAnim.SetTrigger("Fade");
         Reset();
 
         spheres[i].SetActive(true);
@@ -95,7 +122,7 @@ public class SceneHandler : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-        //  spheres[i].GetComponent<UnityEngine.Video.VideoPlayer>().Pause(); Trying to pause to not have that video jump
+        //  spheres[i].GetComponent<UnityEngine.Video.Videoe.target>().Pause(); Trying to pause to not have that video jump
             spheres[i].SetActive(false);
             canvases[i].SetActive(false);
         }
