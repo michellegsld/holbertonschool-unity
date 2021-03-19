@@ -34,7 +34,7 @@ public class OptionsMenu : MonoBehaviour
     public void Back()
     {
         string sceneName = PlayerPrefs.GetString("lastLoadedScene");
-        ResetVolume();
+        //ResetVolume();
         SceneManager.LoadScene(sceneName);
     }
 
@@ -51,6 +51,8 @@ public class OptionsMenu : MonoBehaviour
         }
 
         SetVolume();
+
+        PlayerPrefs.Save();
 
         // Call Back function to load previous scene
         Back();
@@ -76,8 +78,12 @@ public class OptionsMenu : MonoBehaviour
         // This fixes the bug where slider change would persist across scenes
         // even if the "Back" button was pressed, but would correct itself
         // when the "Options" scene was opened again
-        BGM.value = DecibelToLinear(PlayerPrefs.GetFloat("BGMVol"));
-        SFX.value = DecibelToLinear(PlayerPrefs.GetFloat("SFXVol"));
+        // vv OLD SOLUTION, would cause slider to reset before returning to previous scene
+        // BGM.value = DecibelToLinear(PlayerPrefs.GetFloat("BGMVol"));
+        // SFX.value = DecibelToLinear(PlayerPrefs.GetFloat("SFXVol"));
+
+        mixer.SetFloat("BGMVol", PlayerPrefs.GetFloat("BGMVol"));
+        mixer.SetFloat("SFXVol", PlayerPrefs.GetFloat("SFXVol"));
     }
 
     private float LinearToDecibel(float linear)
