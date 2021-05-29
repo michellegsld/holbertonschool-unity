@@ -306,6 +306,8 @@ namespace Valve.VR.InteractionSystem
                     Debug.Log("<b>SteamVR Interaction System</b> Headset removed");
                 }
             }
+
+            _instance.transform.position = new Vector3(_instance.transform.position.x, -0.2f, _instance.transform.position.z);
         }
 
 		//-------------------------------------------------
